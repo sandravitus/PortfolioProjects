@@ -16,7 +16,7 @@ FROM PorfolioProject..CovidDeaths$
 WHERE location= 'South Africa'
 ORDER BY 1,2
 
---this shows the likelihood of dying if you have contracted covid and it was reletively low and gradually increased in 2021 however was still below 5%
+--this shows the likelihood of dying if you have contracted covid and it was relatively low and gradually increased in 2021 however was still below 5%
 --Total_cases vs population 
 
 SELECT location, date,total_cases, population, (total_cases/population)*100 population_percentage
@@ -113,4 +113,5 @@ From PortfolioProject..CovidVaccinations vac
 Join PortfolioProject..CovidDeaths$ deaths
 	ON deaths.date=vac.date 
         and deaths.location=vac.location
+
 WHERE deaths.continent is not null 
